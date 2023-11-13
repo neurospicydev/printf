@@ -10,8 +10,8 @@ int _printf(const char *format, ...);
 _printf function takes a format string as its first argument, followed by any additional arguments required by the format specifiers. The format string can contain ordinary characters and format specifiers, similar to the standard printf.
 
 Supported Format Specifiers
-%c: Character
-%s: String
-%d: Integer
-%i: Placeholder for an integer value (used interchangeably with %d)
-%%: Percent sign
+- %c: Character
+- %s: String
+- %d: Integer
+- %i: Placeholder for an integer value (used interchangeably with %d)
+- %%: Percent sign
