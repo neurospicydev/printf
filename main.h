@@ -36,6 +36,8 @@ int print_binary(va_list args);
 int print_uint(va_list args);
 int print_percentage(va_list args);
 int print_octal(va_list args);
+int print_hex_x(va_list args);
+int print_hex_X(va_list args);
 
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);
