@@ -1,4 +1,4 @@
-# Custom Printf Project
+# Custom Printf Function
 
 This project is part of the ALX Mastercard foundation scholarship program. It aims to reproduce the `printf` function in C, enhanced by returning the number of characters printed.
 
@@ -28,10 +28,16 @@ To use the `_printf` function, include the appropriate header file and call it w
 #include "main.h"
 #include <stdio.h>
 
-int main()
+/**
+ * main - Entry point to the program
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
 {
     int characters_printed = _printf("Hello, %s! This is a number: %d, and a character: %c\n", "world", 42, 'A');
-    printf("Number of characters printed: %d\n", characters_printed);
+    _printf("Number of characters printed: %d\n", characters_printed);
     return 0;
 }
 ```
