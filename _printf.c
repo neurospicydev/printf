@@ -39,9 +39,17 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				char_printed++;
 			}
+
 			print = get_printer(*format);
 			if (print != NULL)
 				char_printed += print(arg_p);
+			else if (*format != '%')
+			{
+				/* Handle unknown specifier */
+				_putchar('%');
+				_putchar(*format);
+				char_printed += 2;
+			}
 		}
 		format++;
 	}
