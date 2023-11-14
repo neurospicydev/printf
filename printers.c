@@ -46,6 +46,20 @@ int print_digit(va_list args)
 }
 
 /**
+ * print_uint - A function that prints a uint to the standard output stream
+ * @args: List of arguments
+ *
+ * Return: Number of digits printed (Success)
+ *
+ */
+int print_uint(va_list args)
+{
+	unsigned long int num = va_arg(args, unsigned long int);
+
+	return (_print_number(num));
+}
+
+/**
  * print_binary - Prints the binary representation of an unsigned integer.
  * @args: A va_list containing the unsigned integer to print in binary.
  *
