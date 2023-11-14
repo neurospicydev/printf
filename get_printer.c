@@ -21,6 +21,7 @@ int (*get_printer(char specifier))(va_list args)
 		{'o', print_octal},
 		{'x', print_hex_x},
 		{'X', print_hex_X},
+		{'S', print_custom_string},
 	};
 
 	for (i = 0; i < sizeof(printers) / sizeof(printers[0]); i++)

@@ -97,33 +97,36 @@ int print_hex_x(va_list args)
  */
 int print_hex_X(va_list args)
 {
-	int count = 0, i = 0, hex[32];
 	unsigned int num = va_arg(args, unsigned int);
 
-	if (num == 0)
-	{
-		_putchar('0');
-		count++;
-	}
-	else
-	{
-		while (num > 0)
-		{
-			hex[i] = num % 16;
-			num = num / 16;
-			i++;
-		}
+	return (_print_hex_X(num));
+}
 
-		for (i = i - 1; i >= 0; i--)
+/**
+ * print_custom_string - Prints the non printable chars in hex format.
+ * @args: A va_list containing a character
+ *
+ * Return: The count of characters printed.
+ */
+int print_custom_string(va_list args)
+{
+	int count = 0;
+	char *str = va_arg(args, char *);
+
+	while (*str != '\0')
+	{
+		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
-			if (hex[i] < 10)
-				_putchar(hex[i] + '0');
-			else
-			{
-				_putchar(hex[i] - 10 + 'A');
-			}
-			count++;
+			count += _print_string("\\x");
+			if (*str < 16)
+				count += _putchar('0');
+
+			count += _print_hex_X(*str);
 		}
+		else
+			count += _putchar(*str);
+
+		str++;
 	}
 
 	return (count);
