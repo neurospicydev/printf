@@ -42,7 +42,7 @@ int _print_string(char *str)
 	int len = 0;
 
 	if (str == NULL)
-		return (len);
+		str = "(null)";
 
 	while (*str != '\0')
 	{
