@@ -15,6 +15,7 @@ int (*get_printer(char specifier))(va_list args)
 		{'s', print_string},
 		{'d', print_digit},
 		{'i', print_digit},
+		{'b', print_binary},
 	};
 
 	for (i = 0; i < sizeof(printers) / sizeof(printers[0]); i++)

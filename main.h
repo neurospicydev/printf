@@ -20,6 +20,8 @@ int _print_string(char *str);
 int print_char(va_list args);
 int print_digit(va_list args);
 int print_string(va_list args);
+int print_binary(va_list args);
+
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);
 
