@@ -25,7 +25,7 @@ int count_digits(unsigned long n)
 }
 
 /**
- * _print_number - Prints a number and returns the number of characters printed.
+ * _print_number - Prints a number and returns the number of characters printed
  * @n: The number to be printed.
  *
  * Return: The number of characters printed.
@@ -61,6 +61,9 @@ int _print_number(unsigned long n)
 	{
 		_putchar(digits[i] + '0');
 	}
+
+	/* Free digits array */
+	free(digits);
 
 	return (num_digits);
 }
