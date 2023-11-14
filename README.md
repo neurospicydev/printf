@@ -1,4 +1,4 @@
-# _printf Project
+# Custom Printf Project
 
 This project is part of the ALX Mastercard foundation scholarship program. It aims to reproduce the `printf` function in C, enhanced by returning the number of characters printed.
 
