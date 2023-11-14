@@ -3,10 +3,18 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-
-/* TEST ONLY */
 #include <stdio.h>
-/* END TEST ONLY */
+
+/**
+ * struct printer - structure of the printer
+ * for each format specifier
+ * @specifier: format specifier
+ * @func: an array of pointers to functions that take
+ * variable pointer arguments as parameters and return
+ * an int
+ *
+ * Description - structure of format specifier printer
+ */
 
 typedef struct printer
 {
