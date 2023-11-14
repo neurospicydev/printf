@@ -1,53 +1,50 @@
 #include "main.h"
 
+/**
+ * _printf - Custom printf function that handles string formatting.
+ * @format: Format string containing types of arguments.
+ *          c: char
+ *          d: integer
+ *          s: string
+ * @...: Variable number of arguments.
+ *
+ * Return: The number of characters printed (excluding the null byte).
+ */
 int _printf(const char *format, ...)
 {
-    char c;
-    int char_printed = 0;
-    va_list arg_p;
+	int char_printed = 0;
+	int (*print)(va_list);
+	va_list arg_p;
 
-    if (format == NULL)
-    {
-        _putchar('\n');
-        return (-1);
-    }
-    va_start(arg_p, format);
+	if (format == NULL)
+	{
+		_putchar('\n');
+		return (char_printed);
+	}
 
-    while (*format)
-    {
-        if (*format != '%')
-        {
-            write(1, format, 1);
-            char_printed++;
-        }
-        else if (*format == '%')
-        {
-            format++;
-            switch (*format)
-            {
-                case '%':
-                    write(1, format, 1);
-                    char_printed++;
-                    break;
-                case 'c':
-                    c = va_arg(arg_p, int);
-                    write(1, &c, 1);
-                    char_printed++;
-                    break;
-                case 'd':
-                case 'i':
-                    print_digit(va_arg(arg_p, int));
-                    char_printed++;
-                    break;
-                case 's':
-                    print_string(va_arg(arg_p, char *));
-                    char_printed++;
-                    break;
-            }
-        }
-        format++;
-    }
-    va_end(arg_p);
-    return (char_printed);
+	va_start(arg_p, format);
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			char_printed++;
+		}
+
+		else if (*format == '%')
+		{
+			format++;
+			if (*format == '%')
+			{
+				_putchar('%');
+				char_printed++;
+			}
+			print = get_printer(*format);
+			if (print != NULL)
+				char_printed += print(arg_p);
+		}
+		format++;
+	}
+	va_end(arg_p);
+	return (char_printed);
 }
-
