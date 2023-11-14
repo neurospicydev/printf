@@ -22,12 +22,23 @@ typedef struct printer
 	int (*func)(va_list args);
 } printer_t;
 
+/* Helpers */
 int _putchar(char c);
 int _print_digit(int num);
 int _print_string(char *str);
+int _print_number(unsigned long n);
+
+/* Printers */
 int print_char(va_list args);
 int print_digit(va_list args);
 int print_string(va_list args);
+int print_binary(va_list args);
+int print_uint(va_list args);
+int print_percentage(va_list args);
+int print_octal(va_list args);
+int print_hex_x(va_list args);
+int print_hex_X(va_list args);
+
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);
 

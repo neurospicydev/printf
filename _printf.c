@@ -34,14 +34,16 @@ int _printf(const char *format, ...)
 		else if (*format == '%')
 		{
 			format++;
-			if (*format == '%')
-			{
-				_putchar('%');
-				char_printed++;
-			}
 			print = get_printer(*format);
 			if (print != NULL)
 				char_printed += print(arg_p);
+			else
+			{
+				/* Handle unknown specifier */
+				_putchar('%');
+				_putchar(*format);
+				char_printed += 2;
+			}
 		}
 		format++;
 	}
