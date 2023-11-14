@@ -16,10 +16,9 @@ int _printf(const char *format, ...)
 	int (*print)(va_list);
 	va_list arg_p;
 
-	if (format == NULL)
+	if (validityCheck(format) == -1)
 	{
-		_putchar('\n');
-		return (char_printed);
+		return (-1);
 	}
 
 	va_start(arg_p, format);
