@@ -17,10 +17,12 @@ typedef struct printer
 int _putchar(char c);
 int _print_digit(int num);
 int _print_string(char *str);
+int _print_number(unsigned long n);
 int print_char(va_list args);
 int print_digit(va_list args);
 int print_string(va_list args);
 int print_binary(va_list args);
+int print_uint(va_list args);
 
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);

@@ -25,12 +25,12 @@ int count_digits(unsigned long n)
 }
 
 /**
- * print_number - Prints a number and returns the number of characters printed.
+ * _print_number - Prints a number and returns the number of characters printed.
  * @n: The number to be printed.
  *
  * Return: The number of characters printed.
  */
-int print_number(unsigned long n)
+int _print_number(unsigned long n)
 {
 	int num_digits, *digits, i;
 
@@ -81,5 +81,5 @@ int _print_digit(int num)
 		num = -num;
 	}
 
-	return (print_number((unsigned long)num));
+	return (_print_number((unsigned long)num));
 }
