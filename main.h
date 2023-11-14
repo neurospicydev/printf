@@ -30,6 +30,7 @@ int _print_digit(int num);
 int _print_string(char *str);
 int _print_number(unsigned long n);
 int _print_hex_X(unsigned int num);
+int validityCheck(const char *format);
 
 /* Printers */
 int print_char(va_list args);

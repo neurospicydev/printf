@@ -2,7 +2,7 @@
 
 /**
  * _print_hex_X - Prints the hexadecimal representation of an unsigned integer.
- * @args: A va_list containing an unsigned integer
+ * @num: Number to convert to hexadecimal and print
  *
  * Return: The count of characters printed.
  */
