@@ -34,12 +34,6 @@ int _printf(const char *format, ...)
 		else if (*format == '%')
 		{
 			format++;
-			if (*format == '%')
-			{
-				_putchar('%');
-				char_printed++;
-			}
-
 			print = get_printer(*format);
 			if (print != NULL)
 				char_printed += print(arg_p);
