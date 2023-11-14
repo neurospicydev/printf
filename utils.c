@@ -10,7 +10,24 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static char buffer[BUFFSIZE];
+	static int i;
+
+	if (i == sizeof(buffer) - 1)
+	{
+		write(1, buffer, i);
+		i = 0;
+	}
+
+	buffer[i] = c;
+	i++;
+
+	if (i > 0)
+	{
+		write(1, buffer, i);
+		i = 0;
+	}
+	return (1);
 }
 
 /**
