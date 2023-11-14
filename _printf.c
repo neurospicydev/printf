@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			print = get_printer(*format);
 			if (print != NULL)
 				char_printed += print(arg_p);
-			else if (*format != '%')
+			else
 			{
 				/* Handle unknown specifier */
 				_putchar('%');
