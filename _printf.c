@@ -23,11 +23,12 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(arg_p, format);
+
 	while (*format)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
+			_putchar(*format);
 			char_printed++;
 		}
 

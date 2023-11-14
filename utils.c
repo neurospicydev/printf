@@ -46,7 +46,7 @@ int _print_string(char *str)
 
 	while (*str != '\0')
 	{
-		write(1, str, 1);
+		_putchar(*str);
 		len++;
 		str++;
 	}
