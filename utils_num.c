@@ -46,8 +46,8 @@ int _print_number(unsigned long n)
 
 	if (digits == NULL)
 	{
-		/* TODO: Should exit failure */
-		return (0);
+		/* return (0); */
+		exit(EXIT_FAILURE);
 	}
 
 	/* Extract digits and store them in the array */
