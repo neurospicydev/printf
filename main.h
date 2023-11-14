@@ -29,6 +29,8 @@ int _putchar(char c);
 int _print_digit(int num);
 int _print_string(char *str);
 int _print_number(unsigned long n);
+int _print_hex_X(unsigned int num);
+int validityCheck(const char *format);
 
 /* Printers */
 int print_char(va_list args);
@@ -40,6 +42,7 @@ int print_percentage(va_list args);
 int print_octal(va_list args);
 int print_hex_x(va_list args);
 int print_hex_X(va_list args);
+int print_custom_string(va_list args);
 
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);
