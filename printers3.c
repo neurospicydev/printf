@@ -10,6 +10,9 @@ int print_pointer(va_list args)
 {
 	unsigned long address = va_arg(args, unsigned long);
 
+	if (address == 0)
+		return (_print_string("(nil)"));
+
 	return (_print_pointer(address));
 }
 
