@@ -26,7 +26,7 @@ typedef struct printer
 
 /* Helpers */
 int _putchar(char c);
-int _print_digit(int num);
+int _print_digit(long int num);
 int _print_string(char *str);
 int _print_number(unsigned long n);
 int _print_hex_X(unsigned int num);

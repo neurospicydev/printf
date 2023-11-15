@@ -76,7 +76,7 @@ int _print_number(unsigned long n)
  * Return: char count (Success)
  *
  */
-int _print_digit(int num)
+int _print_digit(long int num)
 {
 	int count = 0;
 
