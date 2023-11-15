@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
 /**
  * count_digits - Calculates the number of digits in a given number.
@@ -78,11 +79,31 @@ int _print_number(unsigned long n)
  */
 int _print_digit(int num)
 {
-	if (num < 0)
+	int i = 0, j, count_numbers = 0;
+	char buff[BUFFSIZE];
+
+	if (num == 0)
 	{
+		_putchar('0');
+	}
+	else if (num < 0)
+	{
+		if (num >= INT_MIN)
+		{
+			return (write(1, "-2147483648", 12));
+		}
 		_putchar('-');
 		num = -num;
 	}
-
-	return (_print_number((unsigned long)num));
+	while (num != 0)
+	{
+		buff[i++] = '0' + (num % 10);
+		num /= 10;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		write(1, &buff[j], 1);
+		count_numbers++;
+	}
+	return (count_numbers);
 }
