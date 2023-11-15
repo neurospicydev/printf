@@ -135,25 +135,29 @@ int main(void)
 
     _printf("Negative:[%d]\n", -762534000);
     printf("Negative:[%d]\n", -762534000);
+
     _printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
+
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
+
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 
     _printf("Character:[%c]\n", 97);
     printf("Character:[%c]\n", 97);
+
     _printf("98 to binary = %b\n", 98);
     printf("98 to binary = %b\n", 98);
+
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
 
     /* Basic string printing */
     len = _printf("Let's try to printf a simple sentence.\n");
@@ -194,8 +198,8 @@ int main(void)
     printf("Len:[%d]\n", len2);
 
     /* Unknown specifier */
-    _printf("Unknown:[%p]\n");
-    printf("Unknown:[%p]\n");
+    _printf("Unknown:[%?]\n");
+    printf("Unknown:[%?]\n");
 
     return (0);
 }
