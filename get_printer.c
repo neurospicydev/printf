@@ -24,6 +24,7 @@ int (*get_printer(char specifier))(va_list args)
 		{'S', print_custom_string},
 		{'p', print_pointer},
 		{'r', print_reverse},
+		{'R', print_rot13},
 	};
 
 	for (i = 0; i < sizeof(printers) / sizeof(printers[0]); i++)

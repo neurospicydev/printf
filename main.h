@@ -33,6 +33,8 @@ int _print_hex_X(unsigned int num);
 int _print_pointer(unsigned int address);
 int _print_str_rev(char *str);
 int validityCheck(const char *format);
+char encodeChar(char c);
+int _print_rot13(char *str);
 
 /* Printers */
 int print_char(va_list args);
@@ -47,6 +49,7 @@ int print_hex_X(va_list args);
 int print_custom_string(va_list args);
 int print_pointer(va_list args);
 int print_reverse(va_list args);
+int print_rot13(va_list args);
 
 int _printf(const char *format, ...);
 int (*get_printer(char specifier))(va_list args);

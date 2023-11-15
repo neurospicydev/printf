@@ -76,3 +76,55 @@ int _print_str_rev(char *str)
 
 	return (len);
 }
+
+/**
+ * encodeChar - Encodes a character using the ROT13 cipher.
+ *
+ * @c: The character to be encoded.
+ *
+ * Return: The ROT13-encoded character.
+ */
+char encodeChar(char c)
+{
+	int alphabetSize = 26, base;
+
+	/*Check if the character is an alphabet*/
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+
+		/* Determine the base value for the character type */
+		base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
+
+		/* ROT13 encoding */
+		return (((c - base + 13) % alphabetSize) + base);
+	}
+
+	/*If the character is not an alphabet, return the character as it is*/
+	return (c);
+}
+
+/**
+ * _print_rot13 - Encodes a string using the ROT13 cipher.
+ *
+ * @str: Pointer to a string.
+ *
+ * Return: Pointer to the ROT13-encoded string.
+ */
+int _print_rot13(char *str)
+{
+	char *start = str;
+	int len = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (*str != '\0')
+	{
+		_putchar(encodeChar(*str));
+		len++;
+		str++;
+	}
+	str = start;
+
+	return (len);
+}
