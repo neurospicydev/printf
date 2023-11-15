@@ -78,11 +78,15 @@ int _print_number(unsigned long n)
  */
 int _print_digit(int num)
 {
+	int count = 0;
+
 	if (num < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		num = -num;
 	}
 
-	return (_print_number((unsigned long)num));
+	count += _print_number((unsigned long)num);
+
+	return (count);
 }
