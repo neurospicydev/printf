@@ -54,3 +54,25 @@ int _print_string(char *str)
 
 	return (len);
 }
+
+/**
+ * _print_str_rev - A function that prints a string to stdout.
+ * @str: pointer to the address of the string to be printed.
+ *
+ * Return: Always 0 (Success)
+ */
+int _print_str_rev(char *str)
+{
+	int len = 0, i = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (str[len] != '\0')
+		len++;
+
+	for (i = len - 1; i >= 0; i--)
+		_putchar(str[i]);
+
+	return (len);
+}
