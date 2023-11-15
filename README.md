@@ -29,12 +29,12 @@ To use the `_printf` function, include the appropriate header file and call it w
 #include <stdio.h>
 
 /**
- * main - Entry point to the program
+ * test_main - Entry point to the program
  *
  * Return: Always 0 (Success)
  */
 
-int main(void)
+int test_main(void)
 {
     int characters_printed = _printf("Hello, %s! This is a number: %d, and a character: %c\n", "world", 42, 'A');
     _printf("Number of characters printed: %d\n", characters_printed);
@@ -60,8 +60,8 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o printf
 
 ## Authors
 
-- Kami Loïc
 - Nkem Ike-Morris
+- Kami Loïc
 
 ## License
 
