@@ -45,13 +45,12 @@ int _print_hex_X(unsigned int num)
  *
  * Return: The count of characters printed.
  */
-int _print_pointer(unsigned int address)
+int _print_pointer(unsigned long int address)
 {
 	int count = 0, i = 0, hex[32];
 
-	count += _putchar('0');
-	count += _putchar('x');
-	count += _print_string("7fff");
+	/* Print "0x" pointer prefix */
+	count += _print_string("0x");
 
 	if (address == 0)
 		count += _putchar('0');
